@@ -11,7 +11,7 @@ if(isset($_POST['lista_questoes'])){
 $sql = "SELECT * FROM add_questoes";
 $result = $conexao->query($sql);
 
-//print_r($result);
+
 
 ?>
 <!DOCTYPE html>
@@ -41,17 +41,22 @@ $result = $conexao->query($sql);
             </tr>
         </thead>
         <thead>
+        
             <?php
+                echo '<form action="senac.php" method="get">';
                  while($user_data=mysqli_fetch_assoc($result)){
-                    echo "<tr>";  
+                    echo "<tr name='so_vai'>";  
                     echo "<td>".$user_data['id_questoes']."</td>";
                     echo "<td>".$user_data['numerecao']."</td>";
                     echo "<td>".$user_data['questao']."</td>";
                     echo "<td>".$user_data['nivel']."</td>";
                     echo "<td>".$user_data['gabarito']."</td>";
-                    echo "<td><a href='senac.php?id=$user_data[id_questoes]' class='btn-sm btn btn-primary'>enviar</a></td>";
+                    echo "<td><input type='checkbox' name='enviar-questoes[]' id='enviar-questoes' class='btn-sm btn btn-primary' value='".$user_data["questao"]."'></td>";
+                    //echo "<td><a href='senac.php?id=$user_data[id_questoes]' class='btn-sm btn btn-primary'>enviar</a></td>";
                     echo "</tr>";  
                  }
+                echo "<input type='submit' name='submit' class='btn-sm btn btn-primary'>"; 
+                echo '</form>';     
             ?>
             
         </thead>
