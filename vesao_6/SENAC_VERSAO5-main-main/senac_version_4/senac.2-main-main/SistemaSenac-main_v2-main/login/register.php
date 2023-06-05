@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar nome de usuário
     if (empty(trim($_POST["username"]))) {
         $username_err = "Por favor, coloque um nome de usuário.";
-    } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
+    } elseif (!preg_match('/^[a-zA-Z0-9_ ]+$/', trim($_POST["username"]))) {
         $username_err = "O nome de usuário pode conter apenas letras, números e sublinhados.";
     } else {
         $username = trim($_POST["username"]);

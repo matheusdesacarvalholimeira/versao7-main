@@ -51,7 +51,7 @@ $result = $conexao->query($sql);
                     echo "<td>".$user_data['questao']."</td>";
                     echo "<td>".$user_data['nivel']."</td>";
                     echo "<td>".$user_data['gabarito']."</td>";
-                    echo "<td><input type='checkbox' name='enviar-questoes[]' id='enviar-questoes' class='btn-sm btn btn-primary' value='".$user_data["questao"]."'></td>";
+                    echo "<td><input type='checkbox' name='enviar-questoes[]' id='enviar-questoes' class='btn-sm btn btn-primary' value='".$user_data["id_questoes"]."'></td>";
                     //echo "<td><a href='senac.php?id=$user_data[id_questoes]' class='btn-sm btn btn-primary'>enviar</a></td>";
                     echo "</tr>";  
                  }
