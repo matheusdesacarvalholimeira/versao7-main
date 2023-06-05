@@ -59,4 +59,21 @@ select * from questoes;
 drop table questoes;
 
 
+use caad1;
+select * from add_questoes;
+
+
+create table questoes_celecionadas(
+id_questoes int auto_increment primary key,
+questao text,
+gabarito text
+);
+drop table questoes_celecionadas;
+
+insert into questoes_celecionadas (questao,gabarito) values ('sdfs','sfdsfs');
+select * from questoes_celecionadas;
+
+select questao, gabarito from add_questoes where id_questoes = 2;
+
+
 
