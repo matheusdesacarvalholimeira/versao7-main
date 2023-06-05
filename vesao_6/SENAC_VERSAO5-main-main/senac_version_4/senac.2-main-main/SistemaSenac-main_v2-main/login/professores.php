@@ -1,12 +1,24 @@
 <?php
 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;
+}
+
+include_once("confignotas.php");
+
 if(isset($_POST['lista_questoes'])){
   header('location: listar_questoes.php');
 }
 if(isset($_POST['baco_questoes'])){
   header('location: baco_questoes.php');
 }
-
+if(isset($_POST['excluir_prova'])){
+    $sql = "drop table questoes_celecionadas";
+    $result = $conexao->query($sql);
+    $sqldele = "create table questoes_celecionadas(id_questoes int auto_increment primary key,questao text,gabarito text)";
+    $result = $conexao->query($sqldele);
+}
 
 if(isset($_POST['evii'])){
   
@@ -45,6 +57,9 @@ if(isset($_POST['evii'])){
     </form>
     <form action="" method="post">
     <input type="submit" class="apare btn btn-primary" value="Baco de questoes" name="lista_questoes">
+    </form>
+    <form action="" method="post">
+    <input type="submit" class="apare btn btn-primary" value="excluir prova" name="excluir_prova">
     </form>
     
     

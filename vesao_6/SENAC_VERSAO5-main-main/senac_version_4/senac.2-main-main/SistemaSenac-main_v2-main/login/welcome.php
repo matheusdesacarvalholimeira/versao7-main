@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <h1 class="my-5 text-center">Oi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bem vindo ao Painel.</h1>
     <p class="ajuste">
-        <a href="senac.php" class="btn btn-warning tex">Clique aqui para fazer sua Prova</a>
+        <a href="provac.php" class="btn btn-warning tex">Clique aqui para fazer sua Prova</a>
         <a href="reset-password.php" class="btn btn-warning">Redefina sua senha</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sair da conta</a>
     </p>
