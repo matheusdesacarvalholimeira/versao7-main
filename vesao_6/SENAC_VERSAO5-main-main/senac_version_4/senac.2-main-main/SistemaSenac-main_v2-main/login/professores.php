@@ -1,9 +1,9 @@
 <?php
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  header("location: login.php");
-  exit;
-}
+//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  //header("location: login.php");
+  //exit;
+//}
 
 include_once("confignotas.php");
 
@@ -41,6 +41,36 @@ if(isset($_POST['evii'])){
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Professor</title>
+    <style>
+      .menor{
+            align-items: center;
+            margin-top: 2px;
+            box-shadow: none;
+            width: 100%;
+            display: flex;
+            color: black;
+            justify-content: center;
+      }
+      
+      .ajuste{
+            width: 200px;
+            margin: 30px;
+            justify-content: space-between;
+            border-radius: 50px;
+            
+      }
+
+      
+
+      .tito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      
+    </style>
 </head>
 <body>
 
@@ -50,24 +80,32 @@ if(isset($_POST['evii'])){
         <a class="navbar-brand" href="#">
         <img src="img/logo-senac.png" alt="logo" style="width:65px;" class="logoo">
         </a>
-    </nav>
-    <input type="submit" class="apare btn btn-primary" value="ADD Quetões">
-    <form action="" method="post">
-    <input type="submit" class="apare btn btn-primary" value="Liste de questôes" name="baco_questoes">
-    </form>
-    <form action="" method="post">
-    <input type="submit" class="apare btn btn-primary" value="Baco de questoes" name="lista_questoes">
-    </form>
-    <form action="" method="post">
-    <input type="submit" class="apare btn btn-primary" value="excluir prova" name="excluir_prova">
-    </form>
+    </nav>    
+<div class="maior">
+<div class="menor">      
     
+    <input type="submit" class="apare ajuste btn btn-primary" value="ADD Quetões">
+    <form action="" method="post">
+    <input type="submit" class="ajuste btn btn-primary" value="Liste de questôes" name="baco_questoes">
+    </form>
+    <form action="" method="post">
+    <input type="submit" class="ajuste btn btn-primary" value="Baco de questoes" name="lista_questoes">
+    </form>
+    <form action="" method="post">
+    <input type="submit" class="ajuste btn btn-primary" value="excluir prova" name="excluir_prova">
+    </form>
+</div>
+</div>
+
+
     
   <div class="esconder">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <div class="tito">
         <h5 class="modal-title ">Quetoes</h5>
+        </div>
         <button type="submit" class="btn-close"></button>
 
         <!--o x para cancelar a quetao-->

@@ -96,7 +96,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body{ font: 10px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px;  margin-left: 30%;}
+        .wrappe{ 
+            width: 390px; 
+            padding: 20px; 
+            background-color: #FCF3E5;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            color: black;
+            font-size: 15px; 
+        }
+        .container{
+            align-items: center;
+            margin-top: 2px;
+            box-shadow: none;
+            width: 100%;
+            display: flex;
+            color: black;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -108,7 +126,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Links -->
     
   </nav>
-    <div class="wrapper text-center">
+  <div class="container">
+    <div class="wrappe">
         <h2>Cadastro</h2>
         <p>Por favor, preencha este formulário para criar uma conta.</p>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
@@ -143,11 +162,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Criar Conta"><br><br>
-    <input type="reset" class="btn btn-secondary ml-2" value="Apagar Dados">
+    
 </div>
 
             <p>Já tem uma conta? <a href="login.php">Entre aqui</a>.</p>
         </form>
-    </div>    
+    </div>  
+    </div>      
 </body>
 </html>

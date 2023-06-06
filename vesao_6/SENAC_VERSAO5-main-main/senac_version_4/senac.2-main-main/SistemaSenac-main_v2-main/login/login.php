@@ -126,11 +126,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body{ font: 14px sans-serif; }
-        .wrapper{ 
-            width: 360px; 
-            padding: 20px;
-            margin-left: 30%;
+        .wrappe{ 
+            width: 390px; 
+            background-color: #FCF3E5;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            color: black;
+            font-size: 15px;
          }
+
+        .container{
+            align-items: center;
+            margin-top: 2px;
+            box-shadow: none;
+            width: 100%;
+            display: flex;
+            color: black;
+            justify-content: center;
+        }
+
+        body{
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -142,8 +161,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Links -->
     
   </nav>
-  <div class="text-center">
-    <div class="wrapper text-center">
+
+  <div class="container">
+
+    <div class="wrappe ">
         <h2>Login</h2>
         <p>Por favor, preencha os campos para fazer o login.</p>
 
@@ -152,11 +173,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
         }        
         ?>
-    <div class="text-center">
+    <div class="">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Email de usuário</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>>
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group">
