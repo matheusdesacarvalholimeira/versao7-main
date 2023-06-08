@@ -95,11 +95,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body{ font: 10px sans-serif; }
+
+        html{
+            
+        }
+        body{ 
+            font: 10px sans-serif;
+            height: 100%;
+            background-image: linear-gradient(to top right , #3103e5, #f5890c);
+        }
         .wrappe{ 
             width: 390px; 
-            padding: 20px; 
-            background-color: #FCF3E5;
             margin-top: 20px;
             border-radius: 5px;
             padding: 10px;
@@ -114,7 +120,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             color: black;
             justify-content: center;
+            background-color: rgba(1, 1, 1, 0);
         }
+
+        body{
+            width: 100%;
+        }
+
+        label{
+            color: white;
+        }
+
+        p{
+            color: white;
+        }
+
+        h2{
+            color: white;
+        }
+
+        a{
+            color: #f5890c;
+        }
+        .btn{
+           
+            background-color: #3103e5;
+            border: #3103e5;
+        }
+
+        
+
+
     </style>
 </head>
 <body>

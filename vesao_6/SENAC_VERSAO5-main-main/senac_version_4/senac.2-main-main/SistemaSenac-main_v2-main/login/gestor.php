@@ -4,6 +4,9 @@ include_once('confignotas.php');
 
 echo "professores ou alunos";
 
+$sql = "SELECT * FROM users WHERE user_type = 'aluno'";
+$result = $conexao->query($sql);
+
 if(isset($_POST['professores'])){
    echo "deu certo";
    $sql = "SELECT * FROM users WHERE user_type = 'professor'";

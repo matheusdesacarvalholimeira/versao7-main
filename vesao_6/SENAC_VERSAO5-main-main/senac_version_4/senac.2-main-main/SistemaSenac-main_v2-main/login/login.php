@@ -8,7 +8,7 @@ include_once "confignotas.php";
 if(isset($_POST['submit'])){
     $sou = $_POST['tipo'];
 
-    $sqlt = "SELECT * FROM users WHERE username = ? AND user_type = ?";
+    $sqlt = "SELECT * FROM users WHERE email = ? AND user_type = ?";
     $stmt = $conexao->prepare($sqlt);
     $stmt->bind_param("ss", $_SESSION['username'], $sou);
     $stmt->execute();
@@ -58,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validar credenciais
     if(empty($username_err) && empty($password_err)){
         // Prepare uma declaração selecionada
-        $sql = "SELECT id, username, password FROM users WHERE email = :username";
+        $sql = "SELECT id, email, password FROM users WHERE email = :username";
         
         if($stmt = $pdo->prepare($sql)){
             // Vincule as variáveis à instrução preparada como parâmetros
@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($stmt->rowCount() == 1){
                     if($row = $stmt->fetch()){
                         $id = $row["id"];
-                        $username = $row["username"];
+                        $username = $row["email"];
                         $hashed_password = $row["password"];
                         if(password_verify($password, $hashed_password)){
                             // A senha está correta, então inicie uma nova sessão
@@ -125,10 +125,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body{ font: 14px sans-serif; }
+
+        hyml{
+            height: 100%;
+        }
+        body{ 
+            font: 14px sans-serif; 
+            height: 100%;
+            background-image: linear-gradient(to top right , #3103e5, #f5890c);
+        }
         .wrappe{ 
             width: 390px; 
-            background-color: #FCF3E5;
             margin-top: 20px;
             border-radius: 5px;
             padding: 10px;
@@ -138,17 +145,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         .container{
             align-items: center;
+            justify-items: center;
             margin-top: 2px;
             box-shadow: none;
             width: 100%;
             display: flex;
             color: black;
             justify-content: center;
+            background-color: rgba(1, 1, 1, 0);
         }
 
         body{
             width: 100%;
         }
+
+        label{
+            color: white;
+        }
+
+        p{
+            color: white;
+        }
+
+        h2{
+            color: white;
+        }
+
+        a{
+            color: #f5890c;
+        }
+        .btn{
+           
+            background-color: #3103e5;
+            border: #3103e5;
+        }
+
+
 
     </style>
 </head>
